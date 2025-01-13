@@ -1,4 +1,4 @@
---- ~/nvim/lua/slydragonn/plugins/treesiter.lua
+--- ~/nvim/lua/beanlab/plugins/treesiter.lua
 
 return {
     "nvim-treesitter/nvim-treesitter",
