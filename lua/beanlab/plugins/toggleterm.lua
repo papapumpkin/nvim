@@ -1,11 +1,9 @@
--- ~/nvim/lua/beanlab/plugins/toggleterm.lua
-
 return {
 	"akinsho/toggleterm.nvim",
 	version = "*",
 	config = function()
 		require("toggleterm").setup({
-			size = 10,
+			size = 8,
 			open_mapping = [[<F7>]],
 			shading_factor = 2,
 			direction = "horizontal",
