@@ -1,4 +1,5 @@
 vim.g.mapleader = " "
+vim.g.maplocalleader = " "
 
 local function map(mode, lhs, rhs, opts)
 	opts = opts or {}
@@ -40,3 +41,19 @@ map("n", "<leader>fc", "<CMD>Telescope git_commits<CR>", { desc = "Browse git co
 
 -- Terminal
 map("n", "<leader>t", ":ToggleTerm<CR>", { desc = "Open terminal" })
+
+-- CodeCompanion
+map("n", "<C-a>", "<CMD>CodeCompanionActions<CR>", { desc = "Open CodeCompanion actions" })
+map("v", "<C-a>", "<CMD>CodeCompanionActions<CR>", { desc = "Open CodeCompanion actions" })
+map("n", "<LocalLeader>a", "<CMD>CodeCompanionChat Toggle<CR>", { desc = "Toggle CodeCompanion chat" })
+map("v", "<LocalLeader>a", "<CMD>CodeCompanionChat Toggle<CR>", { desc = "Toggle CodeCompanion chat" })
+map("v", "ga", "<CMD>CodeCompanionChat Add<CR>", { desc = "Add selection to CodeCompanion chat" })
+
+-- Expand 'cc' into 'CodeCompanion' in the command line
+vim.cmd([[cab cc CodeCompanion]])
+
+-- Substitute
+map("n", "s", function() return require('substitute').operator() end, { expr = true, desc = "Substitute operator" })
+map("n", "ss", function() return require('substitute').line() end, { expr = true, desc = "Substitute line" })
+map("n", "S", function() return require('substitute').eol() end, { expr = true, desc = "Substitute to end of line" })
+map("x", "s", function() return require('substitute').visual() end, { expr = true, desc = "Substitute visual" })
