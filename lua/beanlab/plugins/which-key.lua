@@ -31,17 +31,6 @@ return {
 			{ "<leader>gb", "<cmd>Git blame<cr>", desc = "Blame" },
 			{ "<leader>gl", "<cmd>Git log<cr>", desc = "Log" },
 			{ "<leader>gL", "<cmd>Git log --oneline --graph --all<cr>", desc = "Log Graph" },
-			{ "<leader>gcom", "<cmd>Git checkout main<cr>", desc = "Checkout Main" },
-			{
-				"<leader>gcob",
-				function()
-					local branch = vim.fn.input("Branch name: ")
-					if branch ~= "" then
-						vim.cmd("Git checkout " .. branch)
-					end
-				end,
-				desc = "Checkout/Create Branch",
-			},
 
 			{ "<leader>a", group = "AI" },
 			{ "<leader>aa", "<cmd>CodeCompanionActions<cr>", desc = "Actions" },
