@@ -23,9 +23,49 @@ return {
 			strategies = {
 				chat = {
 					adapter = "anthropic",
+					keymaps = {
+						next_chat = {
+							modes = { n = "]]" },
+							index = 8,
+							callback = "keymaps.next_chat",
+							description = "Next chat",
+						},
+						previous_chat = {
+							modes = { n = "[[" },
+							index = 9,
+							callback = "keymaps.previous_chat",
+							description = "Previous chat",
+						},
+						close = {
+							modes = { n = "q" },
+							index = 10,
+							callback = "keymaps.close",
+							description = "Close chat",
+						},
+					},
 				},
 				inline = {
 					adapter = "anthropic",
+					keymaps = {
+						next_change = {
+							modes = { n = "]d" },
+							index = 1,
+							callback = "keymaps.next_change",
+							description = "Move to next change",
+						},
+						prev_change = {
+							modes = { n = "[d" },
+							index = 2,
+							callback = "keymaps.prev_change",
+							description = "Move to previous change",
+						},
+						reject_and_close = {
+							modes = { n = "<Esc>" },
+							index = 3,
+							callback = "keymaps.reject_change",
+							description = "Reject change and close diff",
+						},
+					},
 				},
 				agent = {
 					adapter = "anthropic",

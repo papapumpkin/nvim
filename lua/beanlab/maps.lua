@@ -26,6 +26,21 @@ map("n", "<C-l>", "<C-w>l")
 map("n", "<C-k>", "<C-w>k")
 map("n", "<C-j>", "<C-w>j")
 
+-- Tab Management
+map("n", "<leader>tn", "<CMD>tabnew<CR>", { desc = "Open new tab" })
+map("n", "<leader>tc", "<CMD>tabclose<CR>", { desc = "Close current tab" })
+map("n", "<leader>to", "<CMD>tabonly<CR>", { desc = "Close all other tabs" })
+
+-- Tab Navigation
+map("n", "<leader>tj", "<CMD>tabnext<CR>", { desc = "Go to next tab" })
+map("n", "<leader>tk", "<CMD>tabprevious<CR>", { desc = "Go to previous tab" })
+map("n", "<Tab>", "<CMD>tabnext<CR>", { desc = "Go to next tab" })
+map("n", "<S-Tab>", "<CMD>tabprevious<CR>", { desc = "Go to previous tab" })
+
+-- Move current tab
+map("n", "<leader>tmp", "<CMD>-tabmove<CR>", { desc = "Move tab to the left" })
+map("n", "<leader>tmn", "<CMD>+tabmove<CR>", { desc = "Move tab to the right" })
+
 -- Resize Windows
 map("n", "<C-Left>", "<C-w><")
 map("n", "<C-Right>", "<C-w>>")
@@ -48,12 +63,21 @@ map("v", "<C-a>", "<CMD>CodeCompanionActions<CR>", { desc = "Open CodeCompanion 
 map("n", "<LocalLeader>a", "<CMD>CodeCompanionChat Toggle<CR>", { desc = "Toggle CodeCompanion chat" })
 map("v", "<LocalLeader>a", "<CMD>CodeCompanionChat Toggle<CR>", { desc = "Toggle CodeCompanion chat" })
 map("v", "ga", "<CMD>CodeCompanionChat Add<CR>", { desc = "Add selection to CodeCompanion chat" })
+map("n", "<leader>cn", "<CMD>CodeCompanionChat<CR>", { desc = "New CodeCompanion chat" })
 
 -- Expand 'cc' into 'CodeCompanion' in the command line
 vim.cmd([[cab cc CodeCompanion]])
 
 -- Substitute
-map("n", "s", function() return require('substitute').operator() end, { expr = true, desc = "Substitute operator" })
-map("n", "ss", function() return require('substitute').line() end, { expr = true, desc = "Substitute line" })
-map("n", "S", function() return require('substitute').eol() end, { expr = true, desc = "Substitute to end of line" })
-map("x", "s", function() return require('substitute').visual() end, { expr = true, desc = "Substitute visual" })
+map("n", "s", function()
+	return require("substitute").operator()
+end, { expr = true, desc = "Substitute operator" })
+map("n", "ss", function()
+	return require("substitute").line()
+end, { expr = true, desc = "Substitute line" })
+map("n", "S", function()
+	return require("substitute").eol()
+end, { expr = true, desc = "Substitute to end of line" })
+map("x", "s", function()
+	return require("substitute").visual()
+end, { expr = true, desc = "Substitute visual" })
