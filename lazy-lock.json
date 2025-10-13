@@ -9,6 +9,8 @@
   "friendly-snippets": { "branch": "main", "commit": "572f5660cf05f8cd8834e096d7b4c921ba18e175" },
   "gitsigns.nvim": { "branch": "main", "commit": "1ee5c1fd068c81f9dd06483e639c2aa4587dc197" },
   "lazy.nvim": { "branch": "main", "commit": "1ea3c4085785f460fb0e46d2fe1ee895f5f9e7c1" },
+  "leap-spooky.nvim": { "branch": "main", "commit": "5f44a1f63dc1c4ce50244e92da5bc0d8d1f6eb47" },
+  "leap.nvim": { "branch": "main", "commit": "89b8481b14c72222e4d63e4c791a165f1c340a06" },
   "lspkind.nvim": { "branch": "master", "commit": "3ddd1b4edefa425fda5a9f95a4f25578727c0bb3" },
   "lualine.nvim": { "branch": "master", "commit": "b8c23159c0161f4b89196f74ee3a6d02cdc3a955" },
   "mason-lspconfig.nvim": { "branch": "main", "commit": "6bdb14f230de0904229ec367b410fb817e59b072" },
@@ -31,5 +33,6 @@
   "toggleterm.nvim": { "branch": "main", "commit": "50ea089fc548917cc3cc16b46a8211833b9e3c7c" },
   "tokyodark.nvim": { "branch": "master", "commit": "cc70a2fb809d5376f2bd8e5836f9bb3f5fb8ef43" },
   "vim-fugitive": { "branch": "master", "commit": "61b51c09b7c9ce04e821f6cf76ea4f6f903e3cf4" },
+  "vim-repeat": { "branch": "master", "commit": "65846025c15494983dafe5e3b46c8f88ab2e9635" },
   "which-key.nvim": { "branch": "main", "commit": "b4177e3eaf15fe5eb8357ebac2286d488be1ed00" }
 }

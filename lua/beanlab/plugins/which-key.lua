@@ -70,5 +70,17 @@ return {
 			{ "ss", group = "Substitute line", mode = "n" },
 			{ "S", group = "Substitute to EOL", mode = "n" },
 		})
+
+		-- Leap motion keymaps
+		wk.add({
+			{ "<leader>s", desc = "Leap Forward", mode = { "n", "x", "o" } },
+			{ "<leader>S", desc = "Leap Backward", mode = { "n", "x", "o" } },
+			{ "<leader>ss", desc = "Leap From Window", mode = { "n", "x", "o" } },
+		})
+
+		-- Leap-spooky remote operations (magnetic mode)
+		wk.add({
+			{ "r", desc = "Remote (surrounding) operations", mode = { "o", "x" } },
+		})
 	end,
 }
