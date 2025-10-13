@@ -37,6 +37,7 @@ return {
 			{ "<leader>ac", "<cmd>CodeCompanionChat<cr>", desc = "New Chat" },
 			{ "<leader>at", "<cmd>CodeCompanionChat Toggle<cr>", desc = "Toggle Chat" },
 			{ "<leader>ai", "<cmd>CodeCompanion<cr>", desc = "Inline Prompt" },
+			{ "<leader>am", "<cmd>:MCPHub<CR>", desc = "Open MCP Hub" },
 
 			{ "<leader>e", "<cmd>NvimTreeToggle<cr>", desc = "Toggle Neotree" },
 			{ "<leader>r", "<cmd>NvimTreeFocus<cr>", desc = "Focus Neotree" },

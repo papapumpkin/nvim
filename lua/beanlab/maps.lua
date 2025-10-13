@@ -63,7 +63,6 @@ map("v", "<C-a>", "<CMD>CodeCompanionActions<CR>", { desc = "Open CodeCompanion 
 map("n", "<LocalLeader>a", "<CMD>CodeCompanionChat Toggle<CR>", { desc = "Toggle CodeCompanion chat" })
 map("v", "<LocalLeader>a", "<CMD>CodeCompanionChat Toggle<CR>", { desc = "Toggle CodeCompanion chat" })
 map("v", "ga", "<CMD>CodeCompanionChat Add<CR>", { desc = "Add selection to CodeCompanion chat" })
-map("n", "<leader>cn", "<CMD>CodeCompanionChat<CR>", { desc = "New CodeCompanion chat" })
 
 -- Expand 'cc' into 'CodeCompanion' in the command line
 vim.cmd([[cab cc CodeCompanion]])
