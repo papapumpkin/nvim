@@ -23,5 +23,14 @@ return {
 		-- Git log
 		vim.keymap.set("n", "<leader>gl", "<CMD>Git log<CR>", { desc = "Git log" })
 		vim.keymap.set("n", "<leader>gL", "<CMD>Git log --oneline --graph --all<CR>", { desc = "Git log graph" })
+
+		-- Git checkout - more intuitive mnemonics
+		vim.keymap.set("n", "<leader>gcom", "<CMD>Git checkout main<CR>", { desc = "Git checkout main" })
+		vim.keymap.set("n", "<leader>gcob", function()
+			local branch = vim.fn.input("Branch name: ")
+			if branch ~= "" then
+				vim.cmd("Git checkout " .. branch)
+			end
+		end, { desc = "Git checkout/create branch" })
 	end,
 }

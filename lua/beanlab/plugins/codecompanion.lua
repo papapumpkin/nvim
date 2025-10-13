@@ -43,12 +43,6 @@ return {
 							callback = "keymaps.previous_chat",
 							description = "Previous chat",
 						},
-						close = {
-							modes = { n = "q" },
-							index = 10,
-							callback = "keymaps.close",
-							description = "Close chat",
-						},
 					},
 				},
 				inline = {
@@ -65,12 +59,6 @@ return {
 							index = 2,
 							callback = "keymaps.prev_change",
 							description = "Move to previous change",
-						},
-						reject_and_close = {
-							modes = { n = "<Esc>" },
-							index = 3,
-							callback = "keymaps.reject_change",
-							description = "Reject change and close diff",
 						},
 					},
 				},
