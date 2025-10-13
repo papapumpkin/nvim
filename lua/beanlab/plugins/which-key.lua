@@ -19,6 +19,19 @@ return {
 			{ "<leader>fs", "<cmd>Telescope git_status<cr>", desc = "Git Status" },
 			{ "<leader>fc", "<cmd>Telescope git_commits<cr>", desc = "Git Commits" },
 
+			{ "<leader>g", group = "Git" },
+			{ "<leader>gs", "<cmd>Git<cr>", desc = "Status" },
+			{ "<leader>gc", "<cmd>Git commit -v<cr>", desc = "Commit" },
+			{ "<leader>gp", "<cmd>Git push<cr>", desc = "Push" },
+			{ "<leader>gP", "<cmd>Git pull<cr>", desc = "Pull" },
+			{ "<leader>gr", "<cmd>Git restore %<cr>", desc = "Restore Current File" },
+			{ "<leader>ga", "<cmd>Git add %<cr>", desc = "Add Current File" },
+			{ "<leader>gA", "<cmd>Git add .<cr>", desc = "Add All Files" },
+			{ "<leader>gd", "<cmd>Gdiffsplit<cr>", desc = "Diff Current File" },
+			{ "<leader>gb", "<cmd>Git blame<cr>", desc = "Blame" },
+			{ "<leader>gl", "<cmd>Git log<cr>", desc = "Log" },
+			{ "<leader>gL", "<cmd>Git log --oneline --graph --all<cr>", desc = "Log Graph" },
+
 			{ "<leader>a", group = "AI" },
 			{ "<leader>aa", "<cmd>CodeCompanionChat Toggle<cr>", desc = "Toggle Chat" },
 
