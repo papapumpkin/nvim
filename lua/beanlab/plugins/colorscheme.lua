@@ -1,9 +1,11 @@
 return {
-	"tiagovla/tokyodark.nvim",
+	"navarasu/onedark.nvim",
 	lazy = false,
 	priority = 1000,
 	config = function()
-		vim.opt.termguicolors = true
-		vim.cmd("colorscheme tokyodark")
+		require("onedark").setup({
+			style = "darker",
+		})
+		require("onedark").load()
 	end,
 }

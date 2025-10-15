@@ -7,6 +7,20 @@ return {
 		"nvim-telescope/telescope.nvim", -- Optional: For using slash commands
 		"ravitemer/mcphub.nvim",
 		{ "stevearc/dressing.nvim", opts = {} }, -- Optional: Improves `vim.ui.select`
+		{
+			"MeanderingProgrammer/render-markdown.nvim",
+			ft = { "markdown", "codecompanion" },
+		},
+		{
+			"echasnovski/mini.diff",
+			config = function()
+				local diff = require("mini.diff")
+				diff.setup({
+					-- Disabled by default
+					source = diff.gen_source.none(),
+				})
+			end,
+		},
 	},
 	config = function()
 		require("codecompanion").setup({
