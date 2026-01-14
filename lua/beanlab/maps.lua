@@ -57,15 +57,10 @@ map("n", "<leader>fc", "<CMD>Telescope git_commits<CR>", { desc = "Browse git co
 -- Terminal
 map("n", "<leader>t", ":ToggleTerm<CR>", { desc = "Open terminal" })
 
--- CodeCompanion
-map("n", "<C-a>", "<CMD>CodeCompanionActions<CR>", { desc = "Open CodeCompanion actions" })
-map("v", "<C-a>", "<CMD>CodeCompanionActions<CR>", { desc = "Open CodeCompanion actions" })
-map("n", "<LocalLeader>a", "<CMD>CodeCompanionChat Toggle<CR>", { desc = "Toggle CodeCompanion chat" })
-map("v", "<LocalLeader>a", "<CMD>CodeCompanionChat Toggle<CR>", { desc = "Toggle CodeCompanion chat" })
-map("v", "ga", "<CMD>CodeCompanionChat Add<CR>", { desc = "Add selection to CodeCompanion chat" })
-
--- Expand 'cc' into 'CodeCompanion' in the command line
-vim.cmd([[cab cc CodeCompanion]])
+-- Claude Code
+map("n", "<C-a>", "<CMD>ClaudeCode<CR>", { desc = "Toggle Claude Code" })
+map("n", "<LocalLeader>a", "<CMD>ClaudeCodeFocus<CR>", { desc = "Focus Claude Code" })
+map("v", "<LocalLeader>a", "<CMD>ClaudeCodeSend<CR>", { desc = "Send selection to Claude" })
 
 -- Substitute
 map("n", "s", function()

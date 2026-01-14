@@ -33,10 +33,6 @@ return {
 			{ "<leader>gL", "<cmd>Git log --oneline --graph --all<cr>", desc = "Log Graph" },
 
 			{ "<leader>a", group = "AI" },
-			{ "<leader>aa", "<cmd>CodeCompanionActions<cr>", desc = "Actions" },
-			{ "<leader>ac", "<cmd>CodeCompanionChat<cr>", desc = "New Chat" },
-			{ "<leader>at", "<cmd>CodeCompanionChat Toggle<cr>", desc = "Toggle Chat" },
-			{ "<leader>ai", "<cmd>CodeCompanion<cr>", desc = "Inline Prompt" },
 			{ "<leader>am", "<cmd>:MCPHub<CR>", desc = "Open MCP Hub" },
 
 			{ "<leader>e", "<cmd>NvimTreeToggle<cr>", desc = "Toggle Neotree" },
@@ -46,22 +42,6 @@ return {
 			{ "<leader>o", "<cmd>vsplit<cr>", desc = "Vertical Split" },
 			{ "<leader>p", "<cmd>split<cr>", desc = "Horizontal Split" },
 			{ "<leader>t", "<cmd>ToggleTerm<cr>", desc = "Toggle Terminal" },
-		})
-
-		-- Visual mode mappings
-		wk.add({
-			{ "<leader>aa", "<cmd>CodeCompanionChat Add<cr>", desc = "Add to Chat", mode = "v" },
-			{ "<leader>ai", "<cmd>CodeCompanion<cr>", desc = "Inline Prompt", mode = "v" },
-			{ "ga", "<cmd>CodeCompanionChat Add<cr>", desc = "Add to Chat", mode = "v" },
-			{ "<C-a>", "<cmd>CodeCompanionChat Toggle<cr>", desc = "Toggle AI Chat", mode = "v" },
-		})
-
-		-- Normal mode mappings
-		wk.add({
-			{ "<C-a>", "<cmd>CodeCompanionChat Toggle<cr>", desc = "Toggle AI Chat", mode = "n" },
-			{ "ga", "<cmd>CodeCompanionChat Add<cr>", desc = "Quick Add to Chat", mode = "n" },
-			{ "]d", "<cmd>CodeCompanion diff next<cr>", desc = "Next Diff", mode = "n" },
-			{ "[d", "<cmd>CodeCompanion diff prev<cr>", desc = "Previous Diff", mode = "n" },
 		})
 
 		-- Substitute keymaps
