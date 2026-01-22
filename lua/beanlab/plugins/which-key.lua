@@ -28,7 +28,27 @@ return {
 			{ "<leader>ga", "<cmd>Git add %<cr>", desc = "Add Current File" },
 			{ "<leader>gA", "<cmd>Git add .<cr>", desc = "Add All Files" },
 			{ "<leader>gd", "<cmd>Gdiffsplit<cr>", desc = "Diff Current File" },
-			{ "<leader>gb", "<cmd>Git blame<cr>", desc = "Blame" },
+			{
+				"<leader>gb",
+				function()
+					local branch = vim.fn.input("Branch name: ")
+					if branch ~= "" then
+						vim.cmd("Git checkout " .. branch)
+					end
+				end,
+				desc = "Checkout Branch",
+			},
+			{
+				"<leader>gn",
+				function()
+					local branch = vim.fn.input("New branch name: ")
+					if branch ~= "" then
+						vim.cmd("Git checkout -b " .. branch)
+					end
+				end,
+				desc = "Create New Branch",
+			},
+			{ "<leader>gm", "<cmd>Git checkout main<cr>", desc = "Checkout Main" },
 			{ "<leader>gl", "<cmd>Git log<cr>", desc = "Log" },
 			{ "<leader>gL", "<cmd>Git log --oneline --graph --all<cr>", desc = "Log Graph" },
 

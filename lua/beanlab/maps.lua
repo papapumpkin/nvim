@@ -56,6 +56,7 @@ map("n", "<leader>fc", "<CMD>Telescope git_commits<CR>", { desc = "Browse git co
 
 -- Terminal
 map("n", "<leader>t", ":ToggleTerm<CR>", { desc = "Open terminal" })
+map("t", "<Esc><Esc>", "<C-\\><C-n>", { desc = "Exit terminal mode" })
 
 -- Claude Code
 map("n", "<C-a>", "<CMD>ClaudeCode<CR>", { desc = "Toggle Claude Code" })

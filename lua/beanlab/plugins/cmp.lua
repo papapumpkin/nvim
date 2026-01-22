@@ -42,6 +42,13 @@ return {
 				{ name = "buffer" },
 				{ name = "path" },
 			}),
+			formatting = {
+				format = lspkind.cmp_format({
+					mode = "symbol_text",
+					maxwidth = 50,
+					ellipsis_char = "...",
+				}),
+			},
 		})
 
 		vim.cmd([[
