@@ -63,6 +63,13 @@ map("n", "<C-a>", "<CMD>ClaudeCode<CR>", { desc = "Toggle Claude Code" })
 map("n", "<LocalLeader>a", "<CMD>ClaudeCodeFocus<CR>", { desc = "Focus Claude Code" })
 map("v", "<LocalLeader>a", "<CMD>ClaudeCodeSend<CR>", { desc = "Send selection to Claude" })
 
+-- Diffview
+map("n", "<leader>dv", "<CMD>DiffviewOpen<CR>", { desc = "Open diffview" })
+map("n", "<leader>dc", "<CMD>DiffviewClose<CR>", { desc = "Close diffview" })
+map("n", "<leader>dh", "<CMD>DiffviewFileHistory<CR>", { desc = "View file history" })
+map("n", "<leader>df", "<CMD>DiffviewFileHistory %<CR>", { desc = "View current file history" })
+map("n", "<leader>dm", "<CMD>DiffviewOpen HEAD~1<CR>", { desc = "Compare with last commit" })
+
 -- Substitute
 map("n", "s", function()
 	return require("substitute").operator()

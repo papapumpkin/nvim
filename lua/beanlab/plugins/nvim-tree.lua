@@ -8,6 +8,7 @@ return {
 			sort_by = "case_sensitive",
 			view = {
 				width = 30,
+				preserve_window_proportions = true, -- Preserve window proportions when opening a file
 			},
 			filters = {
 				dotfiles = false,
