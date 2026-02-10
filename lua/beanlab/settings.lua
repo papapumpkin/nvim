@@ -26,4 +26,10 @@ o.showmatch = true -- When a bracket is inserted, briefly jump to the matching o
 o.inccommand = "split" -- When nonempty, shows the effects of :substitute, :smagic, :snomagic and user commands with the :command-preview flag as you type.
 o.splitright = true
 o.splitbelow = true -- When on, splitting a window will put the new window below the current one
+
+-- Window behavior
+o.equalalways = false -- Don't automatically resize windows to be equal size
+o.winminwidth = 5 -- Minimum width for a window (prevents making windows too small)
+o.winminheight = 1 -- Minimum height for a window
+
 o.termguicolors = true
