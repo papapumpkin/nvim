@@ -41,3 +41,9 @@ luac.out
 
 # lazy plugin manager
 lazy-lock.json
+
+# Obsidian vault internals
+.design/.obsidian/workspace.json
+.design/.obsidian/workspace-mobile.json
+.design/drafts/*
+!.design/drafts/.gitkeep
