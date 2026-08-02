@@ -10,7 +10,8 @@ o.relativenumber = true -- Show the line number relative to the line with the cu
 o.clipboard = "unnamedplus" -- uses the clipboard register for all operations except yank.
 o.syntax = "on" -- When this option is set, the syntax with this name is loaded.
 o.autoindent = true -- Copy indent from current line when starting a new line.
-o.cursorline = true -- Highlight the screen line of the cursor with CursorLine.
+o.cursorline = true -- Highlight the screen line of the cursor (horizontal bar).
+o.cursorcolumn = true -- Highlight the screen column of the cursor (vertical bar).
 o.expandtab = true -- In Insert mode: Use the appropriate number of spaces to insert a <Tab>.
 o.shiftwidth = 2 -- Number of spaces to use for each step of (auto)indent.
 o.tabstop = 2 -- Number of spaces that a <Tab> in the file counts for.
@@ -33,3 +34,39 @@ o.winminwidth = 5 -- Minimum width for a window (prevents making windows too sma
 o.winminheight = 1 -- Minimum height for a window
 
 o.termguicolors = true
+
+-- Search
+o.ignorecase = true -- Ignore case in search patterns...
+o.smartcase = true -- ...unless the pattern contains an uppercase letter.
+o.hlsearch = true -- Highlight all matches of the last search.
+o.incsearch = true -- Show matches incrementally as you type.
+
+-- UX / editing
+o.scrolloff = 8 -- Keep 8 lines of context above/below the cursor.
+o.sidescrolloff = 8 -- Same, horizontally.
+o.signcolumn = "yes" -- Always show the sign column so text doesn't shift.
+o.smartindent = true -- Smarter autoindent for new lines.
+o.wrap = false -- Don't wrap long lines (matches your vim setup).
+o.confirm = true -- Ask to save instead of failing on :q with unsaved changes.
+
+-- Files: no swap/backup, but keep persistent undo across sessions
+o.swapfile = false
+o.backup = false
+o.undofile = true
+
+-- Only show the cursor crosshair in the active window (from your .vimrc)
+local cursor_grp = vim.api.nvim_create_augroup("CursorCrosshair", { clear = true })
+vim.api.nvim_create_autocmd({ "WinEnter", "BufEnter" }, {
+	group = cursor_grp,
+	callback = function()
+		vim.wo.cursorline = true
+		vim.wo.cursorcolumn = true
+	end,
+})
+vim.api.nvim_create_autocmd({ "WinLeave" }, {
+	group = cursor_grp,
+	callback = function()
+		vim.wo.cursorline = false
+		vim.wo.cursorcolumn = false
+	end,
+})

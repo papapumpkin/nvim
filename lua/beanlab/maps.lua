@@ -53,15 +53,12 @@ map("n", "<leader>fg", "<CMD>Telescope live_grep<CR>", { desc = "Find string in 
 map("n", "<leader>fb", "<CMD>Telescope buffers<CR>", { desc = "Fuzzy find opened files" })
 map("n", "<leader>fs", "<CMD>Telescope git_status<CR>", { desc = "Show git file diffs" })
 map("n", "<leader>fc", "<CMD>Telescope git_commits<CR>", { desc = "Browse git commits" })
+map("n", "<leader>fd", "<CMD>Telescope lsp_document_symbols<CR>", { desc = "Document symbols (jump)" })
+map("n", "<leader>fw", "<CMD>Telescope lsp_dynamic_workspace_symbols<CR>", { desc = "Workspace symbols" })
+map("n", "<leader>fx", "<CMD>Telescope diagnostics<CR>", { desc = "Project diagnostics" })
 
--- Terminal
-map("n", "<leader>t", ":ToggleTerm<CR>", { desc = "Open terminal" })
+-- Terminal mode: exit to normal with double-Esc (for :terminal buffers)
 map("t", "<Esc><Esc>", "<C-\\><C-n>", { desc = "Exit terminal mode" })
-
--- Claude Code
-map("n", "<C-a>", "<CMD>ClaudeCode<CR>", { desc = "Toggle Claude Code" })
-map("n", "<LocalLeader>a", "<CMD>ClaudeCodeFocus<CR>", { desc = "Focus Claude Code" })
-map("v", "<LocalLeader>a", "<CMD>ClaudeCodeSend<CR>", { desc = "Send selection to Claude" })
 
 -- Diffview
 map("n", "<leader>dv", "<CMD>DiffviewOpen<CR>", { desc = "Open diffview" })
@@ -69,6 +66,10 @@ map("n", "<leader>dc", "<CMD>DiffviewClose<CR>", { desc = "Close diffview" })
 map("n", "<leader>dh", "<CMD>DiffviewFileHistory<CR>", { desc = "View file history" })
 map("n", "<leader>df", "<CMD>DiffviewFileHistory %<CR>", { desc = "View current file history" })
 map("n", "<leader>dm", "<CMD>DiffviewOpen HEAD~1<CR>", { desc = "Compare with last commit" })
+
+-- Replace
+map("n", "<leader>rc", "r", { desc = "Replace character" })
+map("n", "<leader>rw", "ciw", { desc = "Replace word (one instance)" })
 
 -- Substitute
 map("n", "s", function()

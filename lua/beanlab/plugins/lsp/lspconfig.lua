@@ -23,6 +23,28 @@ return {
 			end
 		end
 
+		-- IDE-style navigation keymaps, applied to every buffer an LSP attaches to.
+		vim.api.nvim_create_autocmd("LspAttach", {
+			group = vim.api.nvim_create_augroup("LspKeymaps", { clear = true }),
+			callback = function(args)
+				local bufnr = args.buf
+				local function nmap(lhs, rhs, desc)
+					vim.keymap.set("n", lhs, rhs, { buffer = bufnr, silent = true, desc = desc })
+				end
+
+				nmap("gd", vim.lsp.buf.definition, "Go to definition")
+				nmap("gD", vim.lsp.buf.declaration, "Go to declaration")
+				nmap("gi", vim.lsp.buf.implementation, "Go to implementation")
+				nmap("gr", vim.lsp.buf.references, "References")
+				nmap("K", vim.lsp.buf.hover, "Hover docs")
+				nmap("<leader>rs", vim.lsp.buf.rename, "Replace symbol (all instances)")
+				nmap("<leader>ca", vim.lsp.buf.code_action, "Code action")
+				nmap("<leader>cd", vim.diagnostic.open_float, "Line diagnostics")
+				nmap("[d", function() vim.diagnostic.jump({ count = -1, float = true }) end, "Prev diagnostic")
+				nmap("]d", function() vim.diagnostic.jump({ count = 1, float = true }) end, "Next diagnostic")
+			end,
+		})
+
 		local capabilities = require("cmp_nvim_lsp").default_capabilities()
 
 		mason_lspconfig.setup_handlers({
@@ -83,6 +105,18 @@ return {
 				nvim_lsp["golangci_lint_ls"].setup({
 					on_attach = on_attach,
 					capabilities = capabilities,
+				})
+			end,
+			["lua_ls"] = function()
+				nvim_lsp["lua_ls"].setup({
+					on_attach = on_attach,
+					capabilities = capabilities,
+					settings = {
+						Lua = {
+							diagnostics = { globals = { "vim" } },
+							workspace = { checkThirdParty = false },
+						},
+					},
 				})
 			end,
 		})

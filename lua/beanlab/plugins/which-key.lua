@@ -18,6 +18,9 @@ return {
 			{ "<leader>fb", "<cmd>Telescope buffers<cr>", desc = "Find Buffers" },
 			{ "<leader>fs", "<cmd>Telescope git_status<cr>", desc = "Git Status" },
 			{ "<leader>fc", "<cmd>Telescope git_commits<cr>", desc = "Git Commits" },
+			{ "<leader>fd", "<cmd>Telescope lsp_document_symbols<cr>", desc = "Document Symbols" },
+			{ "<leader>fw", "<cmd>Telescope lsp_dynamic_workspace_symbols<cr>", desc = "Workspace Symbols" },
+			{ "<leader>fx", "<cmd>Telescope diagnostics<cr>", desc = "Diagnostics (project)" },
 
 			{ "<leader>g", group = "Git" },
 			{ "<leader>gs", "<cmd>Git<cr>", desc = "Status" },
@@ -52,16 +55,15 @@ return {
 			{ "<leader>gl", "<cmd>Git log<cr>", desc = "Log" },
 			{ "<leader>gL", "<cmd>Git log --oneline --graph --all<cr>", desc = "Log Graph" },
 
-			{ "<leader>a", group = "AI" },
-			{ "<leader>am", "<cmd>:MCPHub<CR>", desc = "Open MCP Hub" },
+			-- LSP "Code" actions (buffer-local maps are added on LspAttach)
+			{ "<leader>c", group = "Code (LSP)" },
 
-			{ "<leader>e", "<cmd>NvimTreeToggle<cr>", desc = "Toggle Neotree" },
-			{ "<leader>r", "<cmd>NvimTreeFocus<cr>", desc = "Focus Neotree" },
+			{ "<leader>e", "<cmd>NvimTreeToggle<cr>", desc = "Toggle Tree" },
+			{ "<leader>r", group = "Replace" },
 			{ "<leader>w", "<cmd>update<cr>", desc = "Save" },
 			{ "<leader>q", "<cmd>q<cr>", desc = "Quit" },
 			{ "<leader>o", "<cmd>vsplit<cr>", desc = "Vertical Split" },
 			{ "<leader>p", "<cmd>split<cr>", desc = "Horizontal Split" },
-			{ "<leader>t", "<cmd>ToggleTerm<cr>", desc = "Toggle Terminal" },
 		})
 
 		-- Substitute keymaps

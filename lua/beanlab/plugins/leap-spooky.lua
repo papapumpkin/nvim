@@ -1,7 +1,7 @@
 return {
 	"ggandor/leap-spooky.nvim",
 	dependencies = {
-		"ggandor/leap.nvim",
+		{ url = "https://codeberg.org/andyg/leap.nvim", name = "leap.nvim" },
 	},
 	config = function()
 		require("leap-spooky").setup({

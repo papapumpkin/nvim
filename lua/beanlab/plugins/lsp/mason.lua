@@ -19,6 +19,7 @@ return {
 				"tailwindcss",
 				"gopls",
 				"golangci_lint_ls",
+				"lua_ls",
 			},
 		})
 

@@ -5,9 +5,22 @@ local M = {}
 
 local watchers = {}
 
--- Start watching a directory for changes
-function M.watch(path, callback, opts)
+-- Start watching a directory for changes.
+-- Accepts (path, opts, callback) or (path, callback, opts) — order-independent
+-- by type, since this call site has drifted out of sync with this signature twice.
+function M.watch(path, a, b)
+  local opts, callback
+  if type(a) == "function" then
+    callback, opts = a, b
+  else
+    opts, callback = a, b
+  end
   opts = opts or {}
+
+  if type(callback) ~= "function" then
+    vim.notify("directory-watcher.watch: missing callback function", vim.log.levels.ERROR)
+    return nil
+  end
 
   local handle = vim.loop.new_fs_event()
   if not handle then
@@ -35,7 +48,7 @@ function M.watch(path, callback, opts)
   end)
 
   if not ok then
-    vim.notify("Failed to start watching " .. path .. ": " .. tostring(err), vim.log.levels.ERROR)
+    vim.notify("Failed to start watching " .. path .. ": " .. tostring(err), vim.log.levels.WARN)
     handle:close()
     return nil
   end

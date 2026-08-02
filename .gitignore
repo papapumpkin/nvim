@@ -47,3 +47,9 @@ lazy-lock.json
 .design/.obsidian/workspace-mobile.json
 .design/drafts/*
 !.design/drafts/.gitkeep
+
+# beads (steveyegge/beads) — not used in this repo
+.beads/
+
+# serena MCP — not used in this repo
+.serena/

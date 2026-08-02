@@ -1,6 +1,7 @@
 require("beanlab.settings")
 require("beanlab.maps")
 require("beanlab.lazy")
+require("beanlab.hotreload").setup()
 
 -- Configure LSP diagnostics
 vim.diagnostic.config({
